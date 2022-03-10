@@ -1,7 +1,7 @@
 import * as React from 'react';
 import '../reviews/Reviews.css'
 import {Rating} from "@mui/material";
-import user from './user.png'; 
+import user from '../../images/user.png'; 
 
 export function Reviews() {
 
