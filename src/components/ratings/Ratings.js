@@ -1,6 +1,9 @@
 import * as React from 'react';
 import {useState} from 'react';
 import {Rating, TextField} from "@mui/material";
+import {Button} from "@mui/material";
+import TextareaAutosize from '@mui/base/TextareaAutosize';
+
 
 import './Ratings.css'
 
@@ -43,10 +46,23 @@ export function Ratings() {
                     }}/>
                 </div>
 
-                <TextField margin-bottom={10} className={"comment"} placeholder={"Commentaire"} variant="outlined"
-                           multilinerows={5} rowsMax={10} size={"large"}/>
+                <div className={"titre"} ><TextField fullWidth maxWidth={"sm"} placeholder={"Titre"} variant="outlined" size={"large"}></TextField></div>
+                <div className={"comment"} maxLines={5}><TextField fullWidth multiline rows={3}  placeholder={"Commentaire"} variant="outlined" size={"large"}></TextField></div>
+                
 
-                <div className={"LigneVide"}/>
+                <Button style={{background: 'orange'}} 
+
+                        variant="contained"
+                        component="label"
+                >
+                        Upload File
+                    <input
+                        type="file"
+                        hidden
+                    />
+                </Button>
+
+                <div className={"LigneVide"}></div>
 
             </div>
         </div>
