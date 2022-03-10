@@ -1,9 +1,26 @@
 import React from 'react'
-import {Button, TextField} from "@mui/material";
+import {Button, TextField, ThemeProvider} from "@mui/material";
+import { createTheme } from '@mui/material/styles';
+
+const theme = createTheme({
+    status: {
+        danger: '#e53e3e',
+    },
+    palette: {
+        primary: {
+            main: '#0971f1',
+            darker: '#053e85',
+        },
+        neutral: {
+            main: '#cec4c4',
+        },
+    },
+});
 
 export const Purchase = () => {
     return <div>
         <form>
+            <br/><br/>
             <TextField id="outlined-basic" label="Nom" variant="outlined" required/>
             <br/><br/>
             <TextField id="outlined-basic" label="Prénom" variant="outlined" required/>
@@ -12,7 +29,9 @@ export const Purchase = () => {
                        errorText={"Veuillez rentrer un email valide"}
                        required/>
             <br/><br/>
-            <Button variant="contained" type={"submit"}>J'achète mon scooter</Button>
+            <ThemeProvider theme={theme}>
+                <Button variant="contained" color="neutral" type={"submit"}>J'achète mon scooter</Button>
+            </ThemeProvider>
         </form>
     </div>
 }
