@@ -39,6 +39,12 @@
     margin-left: 25%;
 }
 
+.submit {
+    display: block;
+    width: 50%;
+    margin-left: 20%;
+}
+
 .LigneVide {
     height: 20px;
 }

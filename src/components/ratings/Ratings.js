@@ -50,17 +50,21 @@ export function Ratings() {
                 <div className={"comment"} maxLines={5}><TextField fullWidth multiline rows={3}  placeholder={"Commentaire"} variant="outlined" size={"large"}></TextField></div>
                 
 
-                <Button style={{background: 'orange'}} 
+                <div><Button style={{background: 'orange', marginBottom: 10}} 
 
                         variant="contained"
                         component="label"
                 >
-                        Upload File
+                        Ajouter une image
                     <input
                         type="file"
                         hidden
                     />
-                </Button>
+                </Button></div>
+
+                <div claaName={"submit"}><Button variant="contained" style={{background: 'green'}}>
+                    Envoyer
+                </Button></div>
 
                 <div className={"LigneVide"}></div>
 
