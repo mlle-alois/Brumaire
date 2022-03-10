@@ -1,10 +1,15 @@
 import * as React from 'react';
+import {useEffect} from "react";
+
 import '../reviews/Reviews.css'
 import {Rating} from "@mui/material";
 import user from '../../images/user.png'; 
 
 export function Reviews() {
-
+    useEffect(async () => {
+        const reviews = await getReviews();
+        console.log(reviews);
+    });
     return (
         <div className={"body"}>
             <div>

@@ -1,5 +1,6 @@
 import * as React from 'react';
 import {useState} from 'react';
+import {Button, Rating, TextField} from "@mui/material";
 import {Rating, TextField} from "@mui/material";
 import {Button} from "@mui/material";
 import {createTheme, ThemeProvider} from '@mui/material/styles';
@@ -9,6 +10,8 @@ import {createTheme, ThemeProvider} from '@mui/material/styles';
 import './Ratings.css'
 
 export function Ratings() {
+    const token = new URLSearchParams(window.location.search).get("token");
+
     const [autonomyRating, setAutonomyRating] = useState(0);
     const [deliveryRating, setDeliveryRating] = useState(0);
     const [handlingRating, setHandlingRating] = useState(0);
@@ -67,12 +70,12 @@ export function Ratings() {
                 <div className={"comment"} maxLines={5}><TextField fullWidth multiline rows={3}  placeholder={"Commentaire"} variant="outlined" size={"large"} InputProps={{disableUnderline: true}} inputProps={{ maxLength: 250}}></TextField></div>
                 
 
-                <div><Button style={{background: 'orange', marginBottom: 10}} 
+                <div><Button style={{background: 'orange', marginBottom: 10}}
 
-                        variant="contained"
-                        component="label"
+                             variant="contained"
+                             component="label"
                 >
-                        Ajouter une image
+                    Ajouter une image
                     <input
                         type="file"
                         hidden
