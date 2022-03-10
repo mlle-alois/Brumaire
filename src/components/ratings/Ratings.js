@@ -1,8 +1,6 @@
 import * as React from 'react';
 import {useState} from 'react';
 import {Button, Rating, TextField} from "@mui/material";
-import {Rating, TextField} from "@mui/material";
-import {Button} from "@mui/material";
 import {createTheme, ThemeProvider} from '@mui/material/styles';
 
 
@@ -31,6 +29,14 @@ export function Ratings() {
         },
     });
 
+    const onlyOne = function() {
+        this.on('addedfile', function(file) {
+          if (this.files.length > 1) {
+            this.removeFile(this.files[0]);
+          }
+        });
+      }
+
     return (
         <div className={"body"}>
             <div className={"rating"}>
@@ -43,7 +49,7 @@ export function Ratings() {
                     <Rating value={5} precision={5}
                     />
                 </div>
-                <p>__________________________________________________________________________</p>
+                <hr className={"separator"}/>
 
                 <div className={"firstEvaluation"}>
                     <h5 id="firstRasting">Autonomie du produit</h5>
@@ -70,12 +76,12 @@ export function Ratings() {
                 <div className={"comment"} maxLines={5}><TextField fullWidth multiline rows={3}  placeholder={"Commentaire"} variant="outlined" size={"large"} InputProps={{disableUnderline: true}} inputProps={{ maxLength: 250}}></TextField></div>
                 
 
-                <div><Button style={{background: 'orange', marginBottom: 10}}
+                <div><Button style={{background: 'orange', marginBottom: 10}} 
 
-                             variant="contained"
-                             component="label"
+                        variant="contained"
+                        component="label"
                 >
-                    Ajouter une image
+                        Ajouter une image
                     <input
                         type="file"
                         hidden
@@ -88,12 +94,11 @@ export function Ratings() {
 
                 <div>
                 <ThemeProvider theme={theme}>
-                <Button variant="contained" color="neutral" type={"submit"}>Envoyer</Button>
+                <Button variant="contained" color="neutral" type={"submit"} onClick={onlyOne}>Envoyer</Button>
                 </ThemeProvider>
                 </div>
 
                 <div className={"LigneVide"}></div>
-
             </div>
         </div>
         </div>
