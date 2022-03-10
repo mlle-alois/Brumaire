@@ -1,9 +1,14 @@
 import * as React from 'react';
+import {useEffect} from "react";
 import '../reviews/Reviews.css'
 import {Rating} from "@mui/material";
-import user from './user.png'; 
+import user from './user.png';
 
 export function Reviews() {
+    useEffect(async () => {
+        const reviews = await getReviews();
+        console.log(reviews);
+    });
 
     return (
         <div className={"body"}>
@@ -26,14 +31,14 @@ export function Reviews() {
 
                     <table className={"table"}>
 
-                        <tr>  
-                            <td> 
+                        <tr>
+                            <td>
                                 <div className={"user_left"}>
                                     <img src={user} className={"user"}></img>
                                     <span> 10/02/2022 </span>
-                                </div> 
+                                </div>
                             </td>
-                            <td>  
+                            <td>
                                 <div className={"details_right"}>
                                     <div className={"top"}>
 
