@@ -3,6 +3,7 @@ import {Ratings} from "./components/ratings/Ratings";
 import Faq from "./components/faq/Faq";
 import {Navbar} from "./components/navbar/Navbar";
 import {Purchase} from "./components/purchase/Purchase";
+import {Reviews} from "./components/reviews/Reviews";
 
 function App() {
     const currentRoute = window.location.pathname;
