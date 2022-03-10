@@ -1,6 +1,6 @@
 import './App.css';
 import {Ratings} from "./components/ratings/Ratings";
-import {Faq} from "./components/faq/Faq";
+import Faq from "./components/faq/Faq";
 import {Navbar} from "./components/navbar/Navbar";
 import {Purchase} from "./components/purchase/Purchase";
 
