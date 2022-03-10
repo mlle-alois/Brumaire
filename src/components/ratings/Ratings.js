@@ -10,7 +10,8 @@ export function Ratings() {
     const [handlingRating, setHandlingRating] = useState(0);
 
     return (
-        <div className={"rating"}>
+        <div className={"body"}>
+            <div className={"rating"}>
             <div className={"rating-context"}>
                 <br/>
                 <div className={"average-rating"}>
@@ -49,6 +50,7 @@ export function Ratings() {
                 <div className={"LigneVide"}/>
 
             </div>
+        </div>
         </div>
     );
 }

@@ -1,5 +1,6 @@
 import './App.css';
 import {Ratings} from "./components/ratings/Ratings";
+import {Reviews} from "./components/reviews/Reviews";
 import {Faq} from "./components/faq/Faq";
 import {Navbar} from "./components/navbar/Navbar";
 import {Purchase} from "./components/purchase/Purchase";
@@ -11,7 +12,8 @@ function App() {
         <>
             <Navbar/>
             <div className="body">
-                {currentRoute === "/" && <Ratings/>}
+                {currentRoute === "/" && <Reviews/>}
+                {currentRoute === "/reviews" && <Reviews/>}
                 {currentRoute === "/ratings" && <Ratings/>}
                 {currentRoute === "/faq" && <Faq/>}
                 {currentRoute === "/purchase" && <Purchase/>}

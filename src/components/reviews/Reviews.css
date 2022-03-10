@@ -1,0 +1,57 @@
+.body{
+    margin-top: 20px;
+}
+
+.separator{
+    width: 50%;
+}
+
+.container{
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.align_left{
+    float: left;
+    max-width: 50%;
+}
+
+.align_right{
+    float: right;
+    max-width: 50%;
+}
+
+.rating{
+    vertical-align: top;
+}
+
+.evaluation_title{
+    font-size: 20px;
+    vertical-align: top;
+    font-weight: bold;
+}
+
+.user_left{
+    float: left;
+    height: 100%;
+}
+
+.details_right{
+    float: right;
+    text-align: left;
+}
+
+.top{
+    vertical-align: top;
+    margin-bottom: 10px;
+}
+
+.details{
+    font-size: 15px;
+}
+
+.table tr{
+    vertical-align: top;
+}
