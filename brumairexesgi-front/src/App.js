@@ -1,23 +1,23 @@
-import logo from './logo.svg';
+//import logo from './brumaire_logo.png';
 import './App.css';
+//import Navbar from './navbar/Navbar';
+import Appbar from './appbar/Appbar'
+import Dialog from './admin-ui/addQuestionAnswer'
+import Rating from './rating/FiveStarsRating'
 
 function App() {
   return (
+
+
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      
+
+
+       {/* <Appbar />  */}
+      {/* <Dialog /> */}
+      <Rating />
+     
+      
     </div>
   );
 }
