@@ -26,11 +26,12 @@ export function Navbar() {
 
             <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
 
-                    <Button
-                        onClick={goToRatings}
-                        sx={{ my: 2, color: 'black', display: 'block', font: "Montserrat, sans-serif"
-                        }}
-                    > Ratings </Button>
+                {/*<Button
+                    onClick={goToRatings}
+                    sx={{
+                        my: 2, color: 'black', display: 'block', font: "Montserrat, sans-serif"
+                    }}
+                > Ratings </Button>*/}
                 <Button
                     onClick={goToReviews}
                     sx={{ my: 2, color: 'black', display: 'block', font: "Montserrat, sans-serif"
