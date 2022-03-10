@@ -10,11 +10,11 @@ export const Purchase = () => {
         <img src={scooter1} className={"picture"} alt=""/>
         <form className={"form"}>
             <br/><br/>
-            <TextField id="outlined-basic" label="Nom" variant="outlined" required/>
+            <TextField id="outlined-basic" label="Nom" variant="outlined" required InputProps={{disableUnderline: true}} inputProps={{ maxLength: 30}}/>
             <br/><br/>
-            <TextField id="outlined-basic" label="Prénom" variant="outlined" required/>
+            <TextField id="outlined-basic" label="Prénom" variant="outlined" required InputProps={{disableUnderline: true}} inputProps={{ maxLength: 30}}/>
             <br/><br/>
-            <TextField id="outlined-basic" label="Email" variant="outlined" type={"email"} required/>
+            <TextField id="outlined-basic" label="Email" variant="outlined" type={"email"} required InputProps={{disableUnderline: true}} inputProps={{ maxLength: 50}}/>
             <br/><br/>
             <ThemeProvider theme={theme}>
                 <Button variant="contained" color="neutral" type={"submit"}>J'achète mon scooter</Button>
