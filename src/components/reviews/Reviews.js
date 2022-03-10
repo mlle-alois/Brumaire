@@ -3,7 +3,7 @@ import {useEffect} from "react";
 import {getReviews} from "../../services/reviews.service";
 import '../reviews/Reviews.css'
 import {Rating} from "@mui/material";
-import user from './user.png'; 
+import user from '../../images/user.png'; 
 import test from './test.jpeg';
 
 
