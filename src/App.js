@@ -12,7 +12,8 @@ function App() {
         <>
             <Navbar/>
             <div className="body">
-                {currentRoute === "/" && <Ratings/>}
+                {currentRoute === "/" && <Reviews/>}
+                {currentRoute === "/reviews" && <Reviews/>}
                 {currentRoute === "/ratings" && <Ratings/>}
                 {currentRoute === "/faq" && <Faq/>}
                 {currentRoute === "/purchase" && <Purchase/>}
