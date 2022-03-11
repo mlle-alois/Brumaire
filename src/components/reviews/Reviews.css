@@ -16,11 +16,13 @@
 .align_left{
     float: left;
     max-width: 50%;
+    padding-bottom: 30px;
 }
 
 .align_right{
     float: right;
     max-width: 50%;
+    padding-bottom: 30px;
 }
 
 .rating{
@@ -54,4 +56,10 @@
 
 .table tr{
     vertical-align: top;
+}
+
+.imgRatings{
+    max-width: 170px;
+    max-height: 150px;
+    margin-top: 10px;
 }

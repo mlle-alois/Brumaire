@@ -38,7 +38,6 @@ export function Ratings() {
     });
 
     async function onlyOne(){
-
         await sendRatings(
             title,
             comment,

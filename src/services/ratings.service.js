@@ -7,7 +7,6 @@ export const sendRatings = async (title, content, autonomyScore, deliveryScore, 
     data.append("intAutonomyScore", autonomyScore);
     data.append("intDeliveryScore", deliveryScore);
     data.append("intHandlingScore", handlingScore);
-    data.append("intHandlingScore", handlingScore);
     data.append("picture", image);
     return (await sendFormDataPostRequest(API_URL + "evaluation", data, token)).body;
 };
