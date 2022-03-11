@@ -1,3 +1,5 @@
+export const API_URL = 'https://brumaire.herokuapp.com/';
+
 export const sendGetRequest = async (url) => {
     return fetch(url);
 };
