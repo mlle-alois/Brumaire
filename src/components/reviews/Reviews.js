@@ -4,7 +4,8 @@ import {getReviews} from "../../services/reviews.service";
 import {getRatingsAverage} from "../../services/ratings.service";
 import '../reviews/Reviews.css'
 import {Rating} from "@mui/material";
-import user from './user.png';
+import user from '../../images/user.png'; 
+import test from './test.jpeg';
 
 export function Reviews() {
     const [reviews, setReviews] = React.useState([]);
