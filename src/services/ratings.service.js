@@ -13,5 +13,5 @@ export const sendRatings = async (title, content, autonomyScore, deliveryScore, 
 };
 
 export const getRatingsAverage = async () => {
-    return (await sendGetRequest(API_URL + "evaluation/average")).body;
+    return (await sendGetRequest(API_URL + "evaluation/average")).json();
 };
