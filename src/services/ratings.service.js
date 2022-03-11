@@ -1,7 +1,7 @@
 import {API_URL, sendFormDataPostRequest, sendGetRequest} from "./http-request.service";
 
 export const sendRatings = async (title, content, autonomyScore, deliveryScore, handlingScore, image, token) => {
-    const data = new URLSearchParams();
+    const data = new FormData();
     data.append("strTitle", title);
     data.append("strContent", content);
     data.append("intAutonomyScore", autonomyScore);
