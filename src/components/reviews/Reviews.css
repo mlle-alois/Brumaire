@@ -57,6 +57,12 @@
     margin-top: 10px;
 }
 
+.BottomCard{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
 /*.container{
     width: 80%;
     margin-left: auto;
