@@ -33,7 +33,7 @@ export function Navbar() {
                         onClick={goToReviews}
                         sx={{
                             my: 2, color: 'black', display: 'block', font: "Montserrat, sans-serif"
-                        }}> Evaluations </Button>
+                        }}> Avis </Button>
                     <Button
                         onClick={goToFAQ}
                         sx={{
