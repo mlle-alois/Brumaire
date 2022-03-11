@@ -7,7 +7,6 @@ import {sendRatings} from '../../services/ratings.service'
 
 import './Ratings.css'
 import {goToReviews} from "../../services/routing.service";
-import Popup from "reactjs-popup";
 
 export function Ratings() {
     const token = new URLSearchParams(window.location.search).get("token");
@@ -64,10 +63,10 @@ export function Ratings() {
                 <div className={"rating-context"}>
                     <br/>
                     <div className={"average-rating"}>
-                        <Rating value={5} precision={5}
+                        <Rating value={5} readOnly
                         />
                         <span className={"rating-title"}> Donnez votre avis</span>
-                        <Rating value={5} precision={5}/>
+                        <Rating value={5} readOnly/>
                     </div>
                     <hr className={"separator"}/>
 
@@ -121,10 +120,6 @@ export function Ratings() {
                             />
                         </Button>
                     </div>
-
-                    {/* <div claaName={"submit"}><Button variant="contained" style={{background: 'green'}}>
-                    Envoyer
-                </Button></div> */}
 
                     <div>
                         <ThemeProvider theme={theme}>
