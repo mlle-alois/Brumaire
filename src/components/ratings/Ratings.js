@@ -1,9 +1,9 @@
 import * as React from 'react';
-import {useState} from 'react';
+import {useState, useEffect} from 'react';
 import {Button, Rating, TextField} from "@mui/material";
 import {createTheme, ThemeProvider} from '@mui/material/styles';
 
-
+import {sendRatings} from '../../services/ratings.service'
 
 import './Ratings.css'
 
@@ -13,6 +13,14 @@ export function Ratings() {
     const [autonomyRating, setAutonomyRating] = useState(0);
     const [deliveryRating, setDeliveryRating] = useState(0);
     const [handlingRating, setHandlingRating] = useState(0);
+
+    const [title, setTitle] = useState('');
+    const [comment, setComment] = useState('');
+
+    const [image, setImage] = useState(null);
+    const [imagePath, setImagePath] = useState('');
+
+
 
     const theme = createTheme({
         status: {
@@ -29,14 +37,17 @@ export function Ratings() {
         },
     });
 
-    const onlyOne = function() {
-        this.on('addedfile', function(file) {
-          if (this.files.length > 1) {
-            this.removeFile(this.files[0]);
-          }
-        });
-      }
+    async function onlyOne(){
 
+        await sendRatings(
+            title,
+            comment,
+            autonomyRating,
+            deliveryRating,
+            handlingRating,
+            image
+        )
+      }
     return (
         <div className={"body"}>
             <div className={"rating"}>
@@ -46,8 +57,7 @@ export function Ratings() {
                     <Rating value={5} precision={5}
                     />
                     <span className={"rating-title"}> Donnez votre avis</span>
-                    <Rating value={5} precision={5}
-                    />
+                    <Rating value={5} precision={5}/>
                 </div>
                 <hr className={"separator"}/>
 
@@ -72,30 +82,40 @@ export function Ratings() {
                     }}/>
                 </div>
 
-                <div className={"titre"} ><TextField fullWidth maxWidth={"sm"} placeholder={"Titre"} variant="outlined" size={"large"}  InputProps={{disableUnderline: true}} inputProps={{ maxLength: 30}}></TextField></div>
-                <div className={"comment"} maxLines={5}><TextField fullWidth multiline rows={3}  placeholder={"Commentaire"} variant="outlined" size={"large"} InputProps={{disableUnderline: true}} inputProps={{ maxLength: 250}}></TextField></div>
-                
+                <div className={"titre"} >
+                    <TextField onChange={(e) => setTitle(e.target.value)} fullWidth maxWidth={"sm"} placeholder={"Titre"} variant="outlined" size={"large"}  InputProps={{disableUnderline: true}} inputProps={{ maxLength: 30}}></TextField>
+                </div>
 
-                <div><Button style={{background: 'orange', marginBottom: 10}} 
+                <div className={"comment"} maxLines={5}>
+                    <TextField onChange={(e) => setComment(e.target.value)} fullWidth multiline rows={3}  placeholder={"Commentaire"} variant="outlined" size={"large"} InputProps={{disableUnderline: true}} inputProps={{ maxLength: 250}}></TextField>
+                </div>
 
-                        variant="contained"
-                        component="label"
-                >
+                {image && <div className={"comment"} maxLines={5}>
+                    <a href={imagePath} target='_blank' >{image.name}</a>
+                </div>}
+
+                <div>
+                    <Button style={{background: 'orange', marginBottom: 10}} variant="contained"component="label">
                         Ajouter une image
                     <input
                         type="file"
+                        onChange={(e) => {
+                            setImage(e.target.files[0]);
+                            setImagePath(e.target.value)
+                        }}
                         hidden
                     />
-                </Button></div>
+                    </Button>
+                </div>
 
                 {/* <div claaName={"submit"}><Button variant="contained" style={{background: 'green'}}>
                     Envoyer
                 </Button></div> */}
 
                 <div>
-                <ThemeProvider theme={theme}>
-                <Button variant="contained" color="neutral" type={"submit"} onClick={onlyOne}>Envoyer</Button>
-                </ThemeProvider>
+                    <ThemeProvider theme={theme}>
+                        <Button variant="contained" color="neutral" type={"submit"} onClick={onlyOne}>Envoyer</Button>
+                    </ThemeProvider>
                 </div>
 
                 <div className={"LigneVide"}></div>
