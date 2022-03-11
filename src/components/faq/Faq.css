@@ -1,0 +1,10 @@
+.faq-body {
+    display: flex;
+    max-width: 90%;
+    margin: auto;
+    justify-content: space-around;
+}
+
+.section {
+    max-width: 40%;
+}
