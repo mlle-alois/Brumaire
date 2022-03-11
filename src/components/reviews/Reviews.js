@@ -1,19 +1,32 @@
 import * as React from 'react';
 import {useEffect} from "react";
 import {getReviews} from "../../services/reviews.service";
+import {getRatingsAverage} from "../../services/ratings.service";
 import '../reviews/Reviews.css'
 import {Rating} from "@mui/material";
 import user from '../../images/user.png'; 
 import test from './test.jpeg';
 
-
 export function Reviews() {
+    const [reviews, setReviews] = React.useState([]);
+
+    const [average, setAverage] = React.useState();
+
     useEffect(async () => {
-        const reviews = await getReviews();
+        setReviews(await getReviews());
         console.log(reviews);
-    });
+    },
+    []);
+
+    useEffect(async () => {
+        setAverage(await getRatingsAverage());
+        console.log(average);
+    },
+    []);
+
     return (
         <div className={"body"}>
+
             <div>
                 <span className={"title"}> Evaluations global </span>
                 <Rating value={5} precision={5}/>
@@ -21,169 +34,42 @@ export function Reviews() {
 
             <hr className={"separator"}/>
 
-            <div className={"container"}>
+            {reviews.map(review => 
 
-                <div className={"align_left"}>
+                <div className={"container"}>
 
-                    <table className={"table"}>
+                    <div className={"review"}>
 
-                        <tr>  
-                            <td> 
-                                <div className={"user_left"}>
-                                    <img src={user} className={"user"}></img>
-                                    <span> 10/02/2022 </span>
-                                </div> 
-                            </td>
-                            <td>  
-                                <div className={"details_right"}>
-                                    <div className={"top"}>
+                        <div className={"user_left"}> 
+                            <div>
+                                <img src={user} className={"user"}></img>
+                                <br/>
+                                <span> {new Date(review.creationDate.toString()).toUTCString()} </span>
+                            </div> 
+                        </div>
+                        <div className={"details_right"}>  
+                            <div>
+                                <div className={"top"}>
 
-                                        <Rating className={"rating"} value={5} precision={5}/>
-                                        <span className={"evaluation_title"}> prix prix prix prix prix prix</span>
-
-                                    </div>
-
-                                    <div>
-
-                                        <span className={"details"}>prix prix prix prix prix prix prix prix prix prix prix prix fnazacacancenvnzemm
-                                        prix prix prix prix prix prix prix prix prix prix prix prix </span>
-
-                                    </div>
-
-                                    <img src={test} className={"imgRatings"}></img>
-
-                                </div>
-                            </td>
-                        </tr>
-
-                    </table>
-
-                </div>
-
-                <div className={"align_right"}>
-
-                    <table className={"table"}>
-
-                        <tr>  
-                            <td> 
-                                <div className={"user_left"}>
-                                    <img src={user} className={"user"}></img>
-                                    <span> 10/02/2022 </span>
-                                </div> 
-                            </td>
-                            <td>  
-                                <div className={"details_right"}>
-                                    <div className={"top"}>
-
-                                        <Rating className={"rating"} value={5} precision={5}/>
-                                        <span className={"evaluation_title"}> prix prix prix prix prix prix</span>
-
-                                    </div>
-
-                                    <div>
-
-                                        <span className={"details"}>prix prix prix prix prix prix prix prix prix prix prix prix fnazacacancenvnzemm
-                                        prix prix prix prix prix prix prix prix prix prix prix prix fnazacacancenvnzemm
-                                        prix prix prix prix prix prix prix prix prix prix prix prix fnazacacancenvnzemm
-                                        prix prix prix prix prix prix prix prix prix prix prix prix fnazacacancenvnzemm
-                                        prix prix prix prix prix prix prix prix prix prix prix prix fnazacacancenvnzemm</span>
-
-                                    </div>
-
-                                    <img src={test} className={"imgRatings"}></img>
+                                    <Rating className={"rating"} value={review.averageScore} precision="0.5" readOnly/>
+                                    <span className={"evaluation_title"}> {review.title} </span>
 
                                 </div>
 
-                            </td>
-                        </tr>
+                                <div>
 
-                    </table>
-
-                </div>
-
-            </div>
-
-            <div className={"container"}>
-
-                <div className={"align_left"}>
-
-                    <table className={"table"}>
-
-                        <tr>  
-                            <td> 
-                                <div className={"user_left"}>
-                                    <img src={user} className={"user"}></img>
-                                    <span> 10/02/2022 </span>
-                                </div> 
-                            </td>
-                            <td>  
-                                <div className={"details_right"}>
-                                    <div className={"top"}>
-
-                                        <Rating className={"rating"} value={5} precision={5}/>
-                                        <span className={"evaluation_title"}> prix prix prix prix prix prix</span>
-
-                                    </div>
-
-                                    <div>
-
-                                        <span className={"details"}>prix prix prix prix prix prix prix prix prix prix prix prix fnazacacancenvnzemm
-                                        prix prix prix prix prix prix prix prix prix prix prix prix </span>
-
-                                    </div>
-
-                                    <img src={test} className={"imgRatings"}></img>
+                                    <span className={"details"}> {review.content} </span>
 
                                 </div>
-                            </td>
-                        </tr>
-
-                    </table>
-
-                </div>
-
-                <div className={"align_right"}>
-
-                    <table className={"table"}>
-
-                        <tr>  
-                            <td> 
-                                <div className={"user_left"}>
-                                    <img src={user} className={"user"}></img>
-                                    <span> 10/02/2022 </span>
-                                </div> 
-                            </td>
-                            <td>  
-                                <div className={"details_right"}>
-                                    <div className={"top"}>
-
-                                        <Rating className={"rating"} value={5} precision={5}/>
-                                        <span className={"evaluation_title"}> prix prix prix prix prix prix</span>
-
-                                    </div>
-
-                                    <div>
-
-                                        <span className={"details"}>prix prix prix prix prix prix prix prix prix prix prix prix fnazacacancenvnzemm
-                                        prix prix prix prix prix prix prix prix prix prix prix prix fnazacacancenvnzemm
-                                        prix prix prix prix prix prix prix prix prix prix prix prix fnazacacancenvnzemm
-                                        prix prix prix prix prix prix prix prix prix prix prix prix fnazacacancenvnzemm
-                                        prix prix prix prix prix prix prix prix prix prix prix prix fnazacacancenvnzemm </span>
-
-                                    </div>
-
-                                    <img src={test} className={"imgRatings"}></img>
-
-                                </div>
-
-                            </td>
-                        </tr>
-
-                    </table>
+                                {!!review.pictureURL && <img src={review.pictureURL} className={"imgRatings"}/>}
+        
+                            </div>
+                        </div>
+                    </div>
 
                 </div>
-
-            </div>
+                
+            )}
 
         </div>
     );

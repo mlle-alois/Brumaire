@@ -19,9 +19,9 @@ function App() {
                 {currentRoute === "/ratings" && <Ratings/>}
                 {currentRoute === "/faq" && <Faq/>}
                 {currentRoute === "/purchase" && <Purchase/>}
-                {currentRoute === "/reviews" && <Reviews/>}
                 {currentRoute === "/accessError" && <Token/>}
                 {currentRoute === "/commentError" && <Comment/>}
+
             </div>
         </>
     );
