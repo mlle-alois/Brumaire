@@ -23,7 +23,6 @@ export function Ratings() {
     const [image, setImage] = useState(null);
     const [imagePath, setImagePath] = useState('');
 
-    if (token === null) {
     if (token == null) {
         goToReviews()
         return alert("Vous n'êtes pas autorisé à accéder à cette page")
