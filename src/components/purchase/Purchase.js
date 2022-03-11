@@ -12,7 +12,7 @@ export const Purchase = () => {
     const [email, setEmail] = useState("")
     
     async function handleSubmit(event) {
-        alert("Merci pour votre achat, vous recevrez un mail pour évaluer notre produit")
+        alert("Merci pour votre achat, vous recevrez prochainement un email pour évaluer notre produit")
         await sendPurchase(firstname, name, email)
     }
     
