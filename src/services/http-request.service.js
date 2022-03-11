@@ -1,5 +1,3 @@
-export const API_URL = 'https://brumaire.herokuapp.com/';
-
 export const sendGetRequest = async (url) => {
     return fetch(url);
 };
@@ -9,7 +7,6 @@ export const sendFormDataPostRequest = async (url, body, token) => {
         method: "POST",
         body,
         headers: {
-            "Content-type": "multipart/form-data; charset=UTF-8",
             "Authorization": `Bearer ${token}`
         }
     });

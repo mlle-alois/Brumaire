@@ -4,6 +4,7 @@ import {getReviews} from "../../services/reviews.service";
 import {getRatingsAverage} from "../../services/ratings.service";
 import '../reviews/Reviews.css'
 import {Rating} from "@mui/material";
+
 import logo from './logo.png';
 
 import Card from '@mui/material/Card';
@@ -13,6 +14,7 @@ import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import Grid from '@mui/material/Grid';
+
 
 export function Reviews() {
     const [reviews, setReviews] = React.useState([]);
