@@ -11,14 +11,14 @@ export const Purchase = () => {
     const [name, setName] = useState("")
     const [email, setEmail] = useState("")
     
-    async function handleSubmit(event) {
+    async function handleSubmit() {
         alert("Merci pour votre achat, vous recevrez prochainement un email pour évaluer notre produit")
         await sendPurchase(firstname, name, email)
     }
     
     return <div>
         <img src={scooter1} className={"picture"} alt=""/>
-        <form className={"form"} onSubmit={handleSubmit}>
+        <form className={"form"}>
             <br/><br/>
             <TextField id="outlined-basic" label="Nom" onChange={event => setName(event.target.value)}
                        variant="outlined" required inputProps={{maxLength: 30}}/>
@@ -30,7 +30,7 @@ export const Purchase = () => {
                        variant="outlined" type={"email"} required inputProps={{maxLength: 50}}/>
             <br/><br/>
             <ThemeProvider theme={theme}>
-                <Button variant="contained" color="neutral" type={"submit"}>J'achète mon
+                <Button variant="contained" color="neutral" onClick={handleSubmit}>J'achète mon
                     scooter</Button>
             </ThemeProvider>
         </form>
