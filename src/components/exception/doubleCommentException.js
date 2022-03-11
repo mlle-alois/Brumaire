@@ -10,7 +10,7 @@ export function Comment() {
 
     return <div style={{display: 'block', height: '50%'}}>
     <img src={message} className={"cannot-comment"} alt="" style={{height: '100px',width: '100px'}}/>
-    <h3>Vous avez déjà donner votre avis, vous pouvez le consulter dans la page Reviews !</h3>
+    <h3>Vous avez déjà donné votre avis, vous pouvez le consulter dans la page Reviews !</h3>
     </div>
 
 }
