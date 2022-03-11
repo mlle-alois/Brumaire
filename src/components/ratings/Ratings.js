@@ -1,6 +1,6 @@
 import * as React from 'react';
 import {useState, useEffect} from 'react';
-import {Button, Rating, TextField} from "@mui/material";
+import {Alert, Button, Rating, TextField} from "@mui/material";
 import {createTheme, ThemeProvider} from '@mui/material/styles';
 
 import {sendRatings} from '../../services/ratings.service'
@@ -22,9 +22,10 @@ export function Ratings() {
     const [image, setImage] = useState(null);
     const [imagePath, setImagePath] = useState('');
 
-    if (token === null) {
-        goToReviews()
-        return alert("Vous n'êtes pas autorisé à accéder à cette page")
+    if (token == null) {
+        return (
+            <Alert severity="error">Vous n'êtes pas autorisé à accéder à cette page</Alert>
+        )
     }
 
     const theme = createTheme({
@@ -50,7 +51,8 @@ export function Ratings() {
             autonomyRating,
             deliveryRating,
             handlingRating,
-            image
+            image,
+            token
         )
         return goToReviews()
     }
