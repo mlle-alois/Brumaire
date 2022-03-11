@@ -1,5 +1,5 @@
-import {sendGetRequest} from "./http-request.service";
+import {API_URL, sendGetRequest} from "./http-request.service";
 
 export const getReviews = async () => {
-    return (await sendGetRequest(process.env.API_URL + "evaluation")).json();
+    return (await sendGetRequest(API_URL + "evaluation")).json();
 };
