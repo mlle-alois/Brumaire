@@ -91,12 +91,12 @@ export function Ratings() {
                     </div>
 
                     <div className={"titre"}>
-                        <TextField onChange={(e) => setTitle(e.target.value)} fullWidth maxWidth={"sm"}
+                        <TextField onChange={(e) => setTitle(e.target.value)} fullWidth
                                    placeholder={"Titre"} variant="outlined" size={"large"}
                                    inputProps={{maxLength: 30}}></TextField>
                     </div>
 
-                    <div className={"comment"} maxLines={5}>
+                    <div className={"comment"}>
                         <TextField onChange={(e) => setComment(e.target.value)} fullWidth multiline rows={3}
                                    placeholder={"Commentaire"} variant="outlined" size={"large"}
                                    inputProps={{maxLength: 250}}></TextField>
