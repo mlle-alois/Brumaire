@@ -9,47 +9,44 @@ import Typography from '@mui/material/Typography';
 export function Navbar() {
     return (
 
-    <div className="background">
-        <Toolbar disableGutters>
-            <Typography
-                variant="h6"
-                noWrap
-                component="div"
-                sx={{ mr: 2, display: { xs: 'none', md: 'flex' }, marginRight: 10}}
-            >
-                <img className={"img"} src={require('../../brumaire.png')} height="15" width="100" alt="logo"/>
-            </Typography>
+        <div className="background">
+            <Toolbar disableGutters>
+                <Typography
+                    variant="h6"
+                    noWrap
+                    component="div"
+                    sx={{mr: 2, display: {xs: 'none', md: 'flex'}, marginRight: 10}}
+                >
+                    <img className={"img"} src={require('../../brumaire.png')} height="15" width="100" alt="logo"/>
+                </Typography>
 
 
+                <Box sx={{flexGrow: 1, display: {xs: 'none', md: 'flex'}}}>
 
-
-
-            <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
-
-                {/*<Button
+                    {/*<Button
                     onClick={goToRatings}
                     sx={{
                         my: 2, color: 'black', display: 'block', font: "Montserrat, sans-serif"
                     }}
                 > Ratings </Button>*/}
-                <Button
-                    onClick={goToReviews}
-                    sx={{ my: 2, color: 'black', display: 'block', font: "Montserrat, sans-serif"
-                    }}
-                > Reviews </Button>
-                <Button
-                    onClick={goToFAQ}
-                    sx={{ my: 2, color: 'black', display: 'block', font: "Montserrat, sans-serif"
-                    }}
-                > FAQ </Button>
-                <Button
-                    onClick={goToPurchase}
-                    sx={{ my: 2, color: 'black', display: 'block', font: "Montserrat, sans-serif"
-                    }}
-                > Purchase </Button>
-            </Box>
-        </Toolbar>
-        {/* Brumaire
+                    <Button
+                        onClick={goToReviews}
+                        sx={{
+                            my: 2, color: 'black', display: 'block', font: "Montserrat, sans-serif"
+                        }}> Evaluations </Button>
+                    <Button
+                        onClick={goToFAQ}
+                        sx={{
+                            my: 2, color: 'black', display: 'block', font: "Montserrat, sans-serif"
+                        }}> FAQ </Button>
+                    <Button
+                        onClick={goToPurchase}
+                        sx={{
+                            my: 2, color: 'black', display: 'block', font: "Montserrat, sans-serif"
+                        }}> Achat </Button>
+                </Box>
+            </Toolbar>
+            {/* Brumaire
             <Button variant="contained" onClick={goToRatings}>Ratings</Button>
             <Button variant="contained" onClick={goToReviews}>Reviews</Button>
             <Button variant="contained" onClick={goToFAQ}>FAQ</Button>
