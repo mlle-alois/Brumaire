@@ -11,6 +11,57 @@
     margin-left: auto;
     margin-right: auto;
     text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+}
+
+.review{
+    max-width: 40%;
+    margin-bottom: 15px;
+    display: flex;
+    flex-basis: auto;
+    width: 500px;
+}
+
+.evaluation_title{
+    font-size: 20px;
+    vertical-align: top;
+    font-weight: bold;
+}
+
+.user_left{
+    float: left;
+    height: 100%;
+    width: 25%;
+}
+
+.details_right{
+    float: right;
+    text-align: left;
+    width: 74%;
+}
+
+.top{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.table tr{
+    vertical-align: top;
+}
+
+.imgRatings{
+    max-width: 170px;
+    max-height: 150px;
+    margin-top: 10px;
+}
+
+/*.container{
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
 }
 
 .align_left{
@@ -62,4 +113,4 @@
     max-width: 170px;
     max-height: 150px;
     margin-top: 10px;
-}
+}*/

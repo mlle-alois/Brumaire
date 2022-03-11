@@ -17,7 +17,6 @@ function App() {
                 {currentRoute === "/ratings" && <Ratings/>}
                 {currentRoute === "/faq" && <Faq/>}
                 {currentRoute === "/purchase" && <Purchase/>}
-                {currentRoute === "/reviews" && <Reviews/>}
             </div>
         </>
     );
