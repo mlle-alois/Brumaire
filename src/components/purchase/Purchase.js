@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import {Button, TextField, ThemeProvider} from "@mui/material";
+import {Alert, Button, TextField, ThemeProvider} from "@mui/material";
 import scooter1 from '../../images/scooter-1.jpg';
 import scooter2 from '../../images/scooter-4.jpg';
 import './Purchase.css'
@@ -11,12 +11,17 @@ export const Purchase = () => {
     const [name, setName] = useState("")
     const [email, setEmail] = useState("")
     
+    const [validationMessage, setValidationMessage] = useState("")
+    
     async function handleSubmit() {
-        alert("Merci pour votre achat, vous recevrez prochainement un email pour évaluer notre produit")
+        setValidationMessage("Merci pour votre achat, vous recevrez prochainement un email pour évaluer notre produit")
         await sendPurchase(firstname, name, email)
     }
     
     return <div>
+        {validationMessage && (
+            <Alert severity="success">{validationMessage}</Alert>
+        )}
         <img src={scooter1} className={"picture"} alt=""/>
         <form className={"form"}>
             <br/><br/>
