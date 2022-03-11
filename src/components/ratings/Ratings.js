@@ -44,6 +44,7 @@ export function Ratings() {
     });
 
     async function onlyOne() {
+        alert("Merci pour votre évaluation !")
         await sendRatings(
             title,
             comment,
@@ -52,6 +53,7 @@ export function Ratings() {
             handlingRating,
             image
         )
+        return goToReviews()
     }
 
     return (
