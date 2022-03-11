@@ -4,6 +4,8 @@ import Faq from "./components/faq/Faq";
 import {Navbar} from "./components/navbar/Navbar";
 import {Purchase} from "./components/purchase/Purchase";
 import {Reviews} from "./components/reviews/Reviews";
+import {Token} from "./components/exception/expiredTokenException"
+import {Comment} from "./components/exception/doubleCommentException"
 
 function App() {
     const currentRoute = window.location.pathname;
@@ -18,6 +20,8 @@ function App() {
                 {currentRoute === "/faq" && <Faq/>}
                 {currentRoute === "/purchase" && <Purchase/>}
                 {currentRoute === "/reviews" && <Reviews/>}
+                {currentRoute === "/accessError" && <Token/>}
+                {currentRoute === "/commentError" && <Comment/>}
             </div>
         </>
     );
