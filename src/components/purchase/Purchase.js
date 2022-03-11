@@ -3,7 +3,7 @@ import {Button, TextField, ThemeProvider} from "@mui/material";
 import scooter1 from '../../images/scooter-1.jpg';
 import scooter2 from '../../images/scooter-4.jpg';
 import './Purchase.css'
-import {theme} from "../themes/theme";
+import {theme} from "../../themes/theme";
 import {sendPurchase} from "../../services/purchase.service";
 
 export const Purchase = () => {
@@ -12,6 +12,7 @@ export const Purchase = () => {
     const [email, setEmail] = useState("")
     
     async function handleSubmit(event) {
+        alert("Merci pour votre achat, vous recevrez un mail pour évaluer notre produit")
         await sendPurchase(firstname, name, email)
     }
     
